@@ -19,7 +19,9 @@ public class Parser {
         Scanner sc = createScanner(filePath);
         ArrayList<City> cityList = new ArrayList<>();
 
-        while (sc.hasNextLine()){
+        while (true){
+            assert sc != null;
+            if (!sc.hasNextLine()) break;
             String info = sc.nextLine();
             String[] split = info.split(";", 6);
             City city = new City(split[1],
